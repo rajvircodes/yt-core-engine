@@ -4,10 +4,17 @@
   "description": "Project Structure:\r -  controllers: Business logic for routes\r -  models: Database schemas with Mongoose hooks/plugins\r -  middlewares: Auth and File upload guards\r -  db: Database connection management\r -  utils: Reusable helper classes (asyncHandler, ApiError)",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js" 
+    "dev": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.1",
+    "prettier": "^3.8.1"
+  }
 }
