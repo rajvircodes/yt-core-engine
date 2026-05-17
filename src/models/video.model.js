@@ -1,27 +1,30 @@
-import mongoose, {Schema} from 'mongoose';
-import mongooseAggregatePaginate from 
-'mongoose-aggregate-paginate-v2';
-
+import mongoose, { Schema } from "mongoose";
+import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2'
 const videoSchema = new Schema({
-    vedioFile: {
+    videoFile:{
         type:String,
-        required:true
+        required:true,
+
     },
     thumbnail:{
         type:String,
-        required:true,
+        required:true
+    },
+    title:{
+        type:String,
+        required:true
     },
     description:{
         type:String,
-        required:true,
+        required:true
     },
     duration:{
         type:Number,
-        required:true,
+        required:true
     },
     views:{
-        type:String,
-        default:0
+        type:Number,
+        default: 0
     },
     isPublished:{
         type:Boolean,
@@ -30,13 +33,8 @@ const videoSchema = new Schema({
     owner:{
         type:Schema.Types.ObjectId,
         ref:"User"
-    }, 
-},
-    {
-        timestamps:true,
     }
-);
+},{timestamps:true})
 
-videoSchema.plugin(mongooseAggregatePaginate);
 
-export const Video = mongoose.model("Video", videoSchema)
+export const Video = mongoose.model('Video', videoSchema)

@@ -1,8 +1,12 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
-
+import cors from 'cors'
 const app = express();
 
+
+app.get('/', (req, res)=>{
+    res.send('Hello world from backend')
+})
 app.use(cors({
     origin:process.env.CORS_ORIGIN
 }))
